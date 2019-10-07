@@ -6,12 +6,12 @@ router.get("/assistente", (request, response) => {
 	return response.json({ message: "Assistente Funcionando!" });
 });
 
-router.post("/assistent/action", (request, response) => {
+router.post("/assistent/action", async (request, response) => {
 	const { action, ...payload } = request.body;
 
 	switch (action) {
 		case "marcar_horario": {
-			const marcarHorarioResponse = marcarHorario(payload);
+			const marcarHorarioResponse = await marcarHorario(payload);
 			return response.json(marcarHorarioResponse);
 		}
 	}
