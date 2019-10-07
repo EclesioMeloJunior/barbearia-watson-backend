@@ -7,7 +7,9 @@ router.get("/assistente", (request, response) => {
 
 router.post("/assistent/action", (request, response) => {
 	console.log(request.body);
-	return response.json({ data: request.body });
+	return response.json({
+		message: "Bem vindo a barbearia, como posso ajudar?"
+	});
 });
 
 module.exports = router;
