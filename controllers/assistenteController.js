@@ -5,4 +5,9 @@ router.get("/assistente", (request, response) => {
 	return response.json({ message: "Assistente Funcionando!" });
 });
 
+router.post("/assistent/action", (request, response) => {
+	console.log(request.body);
+	return response.json({ data: request.body });
+});
+
 module.exports = router;
