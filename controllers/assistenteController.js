@@ -1,3 +1,4 @@
+const marcarHorario = require("../services/marcarHorario");
 const router = require("express").Router();
 
 router.get("/assistente", (request, response) => {
@@ -6,7 +7,14 @@ router.get("/assistente", (request, response) => {
 });
 
 router.post("/assistent/action", (request, response) => {
-	console.log(request.body);
+	const { action, ...payload } = request.body;
+
+	switch (action) {
+		case "marcar_horario": {
+			return marcarHorario(payload);
+		}
+	}
+
 	return response.json({
 		message: "Bem vindo a barbearia, como posso ajudar?"
 	});
