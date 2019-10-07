@@ -11,7 +11,8 @@ router.post("/assistent/action", (request, response) => {
 
 	switch (action) {
 		case "marcar_horario": {
-			return marcarHorario(payload);
+			const marcarHorarioResponse = marcarHorario(payload);
+			return response.json(marcarHorarioResponse);
 		}
 	}
 
