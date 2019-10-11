@@ -3,7 +3,7 @@ const agendaModel = require("../models/agenda");
 const marcarHorarioService = async ({ servico, dia, horario, nome }) => {
 	const dataEHora = new Date(`${dia} ${horario}`);
 
-	const horarioOcupado = await agendaModel.find({ date: horario });
+	const horarioOcupado = await agendaModel.find({ date: dataEHora });
 
 	console.log(horarioOcupado);
 
