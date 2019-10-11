@@ -11,7 +11,7 @@ const marcarHorarioService = async ({ servico, dia, horario, nome }) => {
 
 	const agenda = await agendaModel.create(agendaDto);
 
-	console.log(name, agenda);
+	console.log(nome, agenda);
 
 	return {
 		message: `Horário marcado! Guarde seu código de reserva ${agenda._id}`
