@@ -3,6 +3,8 @@ const config = require("./config");
 const express = require("express");
 const database = require("./database");
 const bodyParser = require("body-parser");
+
+const agendaController = require("./controllers/agendaController");
 const assistenteController = require("./controllers/assistenteController");
 
 const start = async () => {
@@ -14,6 +16,7 @@ const start = async () => {
 	app.use(bodyParser.urlencoded({ extended: false }));
 
 	app.use(assistenteController);
+	app.use(agendaController);
 
 	app.get("/", (request, response) => {
 		response.json({ message: "Barbearia Watson!" });

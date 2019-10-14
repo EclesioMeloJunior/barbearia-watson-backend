@@ -5,8 +5,6 @@ const marcarHorarioService = async ({ servico, dia, horario, nome }) => {
 
 	const horarioOcupado = await agendaModel.find({ date: dataEHora });
 
-	console.log(horarioOcupado);
-
 	if (horarioOcupado.length > 0) {
 		return {
 			message: `Este horário já está reservado, tente reservar outro horário.`
